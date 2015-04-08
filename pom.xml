@@ -209,6 +209,31 @@
 			<version>3.0.1</version>
 			<optional>true</optional>
 		</dependency>
+		<!-- Togglz core module (mandatory) -->
+<dependency>
+  <groupId>org.togglz</groupId>
+  <artifactId>togglz-core</artifactId>
+  <version>2.1.0.Final</version>
+</dependency>
+
+<!-- Togglz for Servlet environments (mandatory for webapps) -->
+<dependency>
+  <groupId>org.togglz</groupId>
+  <artifactId>togglz-servlet</artifactId>
+  <version>2.1.0.Final</version>
+</dependency>
+<!-- Spring integration (optional) -->
+<dependency>
+  <groupId>org.togglz</groupId>
+  <artifactId>togglz-spring</artifactId>
+  <version>2.1.0.Final</version>
+</dependency>
+<!-- Togglz Admin Console -->
+<dependency>
+  <groupId>org.togglz</groupId>
+  <artifactId>togglz-console</artifactId>
+  <version>2.1.0.Final</version>
+</dependency>
 	</dependencies>
 
 	<build>
@@ -341,29 +366,7 @@
 					<version>2.10</version>
 					<!-- <configuration> <excludes> <exclude>**/EmployeeControllerTest.java</exclude> 
 						<exclude>**/EmployeeAddControllerTest.java</exclude> </excludes> </configuration> -->
-					<configuration>
-						<!-- Skip the normal tests, we'll run them in the integration-test phase 
-							<skip>true</skip> -->
-						<excludes>
-							<exclude>**/EmployeeDeleteSeleniumTest.java</exclude>
-							<exclude>**/EmployeeAddSeleniumTest.java</exclude>
-							<exclude>**/EmployeeEditSeleniumTest.java</exclude>
-						</excludes>
-					</configuration>
-					<executions>
-						<execution>
-							<phase>integration-test</phase>
-							<goals>
-								<goal>test</goal>
-							</goals>
-							<configuration>
-								<excludes>
-									<exclude>**/EmployeeControllerTest.java</exclude>
-									<!-- <exclude>**/com.sample.mvc.service/</exclude> <exclude>**/com.sample.mvc.dao/</exclude> -->
-								</excludes>
-							</configuration>
-						</execution>
-					</executions>
+					
 </plugin>
 
 			<plugin>
